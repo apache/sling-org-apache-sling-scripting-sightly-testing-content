@@ -67,5 +67,10 @@
     },
     "resource.with.dots.in.path": {
         "jcr:primaryType": "nt:unstructured"
+    },
+    "synthetic-resource": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "/apps/sightly/scripts/syntheticresourcecaller"
     }
+
 }
