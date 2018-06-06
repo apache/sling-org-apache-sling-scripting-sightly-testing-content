@@ -76,6 +76,10 @@
         "repeat": {
             "jcr:primartyType": "nt:unstructured",
             "sling:resourceType": "/sightlytck/scripts/blockstatements/repeat"
+        },
+        "set": {
+            "jcr:primartyType": "nt:unstructured",
+            "sling:resourceType": "/sightlytck/scripts/blockstatements/set"
         }
 
     },
