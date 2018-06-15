@@ -80,6 +80,10 @@
         "set": {
             "jcr:primartyType": "nt:unstructured",
             "sling:resourceType": "/sightlytck/scripts/blockstatements/set"
+        },
+        "scoping": {
+            "jcr:primartyType": "nt:unstructured",
+            "sling:resourceType": "/sightlytck/scripts/blockstatements/scoping"
         }
 
     },
