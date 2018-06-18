@@ -32,5 +32,6 @@
 <sly data-sly-resource="${'/sightly/resource.with.dots.in.path' @ resourceType='sightly/scripts/renderer'}"/>
 <sly data-sly-resource="${'/sightly/nonexistingresource' @ resourceType='sightly/scripts/renderer'}"/>
 <sly data-sly-resource="${@ resourceType='sightly/scripts/renderer'}"/>
+<div id="wrapper-no-recursion" data-sly-resource="${'.'}"></div>
 </body>
 </html>
