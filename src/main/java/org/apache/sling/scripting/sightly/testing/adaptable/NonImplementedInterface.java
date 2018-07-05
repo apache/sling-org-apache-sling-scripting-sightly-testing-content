@@ -14,8 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-
-@Version("1.2.0")
 package org.apache.sling.scripting.sightly.testing.adaptable;
 
-import org.osgi.annotation.versioning.Version;
+public interface NonImplementedInterface {
+
+}
