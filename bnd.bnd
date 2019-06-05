@@ -1,0 +1,3 @@
+Sling-Initial-Content:SLING-INF;uninstall\:=true;ignoreImportProviders\:=jar
+Sling-Model-Packages: org.apache.sling.scripting.sightly.testing.models
+Require-Capability: io.sightly; filter:="(&(version>=1.0)(!(version>=2.0)))"

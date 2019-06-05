@@ -18,31 +18,18 @@
  ******************************************************************************/
 package org.apache.sling.scripting.sightly.testing.adaptable.impl;
 
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Properties;
-import org.apache.felix.scr.annotations.Property;
-import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.adapter.AdapterFactory;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.scripting.sightly.testing.adaptable.ResourceAdapterUseObject;
+import org.osgi.service.component.annotations.Component;
 
-@Component
-@Service
-@Properties({
-        @Property(
-                name = AdapterFactory.ADAPTABLE_CLASSES,
-                value = {
-                        "org.apache.sling.api.resource.Resource"
-                }
-        ),
-        @Property(
-                name = AdapterFactory.ADAPTER_CLASSES,
-                value = {
-                        "org.apache.sling.scripting.sightly.testing.adaptable.ResourceAdapterUseObject"
-                }
-        )
-})
+@Component(
+        property = {
+                AdapterFactory.ADAPTABLE_CLASSES + "=org.apache.sling.api.resource.Resource",
+                AdapterFactory.ADAPTER_CLASSES + "=org.apache.sling.scripting.sightly.testing.adaptable.ResourceAdapterUseObject"
+        }
+)
 public class ResourceAdapterFactory implements AdapterFactory {
 
     @Override

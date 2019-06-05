@@ -16,12 +16,10 @@
  ******************************************************************************/
 package org.apache.sling.scripting.sightly.testing.use.impl;
 
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.scripting.sightly.testing.use.TestService;
+import org.osgi.service.component.annotations.Component;
 
 @Component
-@Service(TestService.class)
 public class TestServiceImpl implements TestService {
 
     @Override
