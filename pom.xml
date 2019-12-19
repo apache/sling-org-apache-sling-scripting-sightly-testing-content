@@ -104,7 +104,6 @@
                                 <artifactItem>
                                     <groupId>io.sightly</groupId>
                                     <artifactId>io.sightly.tck</artifactId>
-                                    <version>1.4.0</version>
                                     <type>jar</type>
                                     <outputDirectory>${project.build.directory}/sightlytck/</outputDirectory>
                                     <includes>**/*.html,**/*.js,**/*.java</includes>
@@ -157,16 +156,13 @@
         </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>oss-sonatype</id>
-            <name>OSS Sonatype</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <!-- Test bundle dependencies -->
+        <dependency>
+            <groupId>io.sightly</groupId>
+            <artifactId>io.sightly.tck</artifactId>
+            <version>1.4.1</version>
+        </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.annotation.versioning</artifactId>
