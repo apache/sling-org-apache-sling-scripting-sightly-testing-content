@@ -71,6 +71,10 @@
     "synthetic-resource": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "/apps/sightly/scripts/syntheticresourcecaller"
+    },
+    "inherit": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "sightly/scripts/inherit"
     }
 
 }
