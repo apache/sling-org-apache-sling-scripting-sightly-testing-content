@@ -153,6 +153,24 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bnd-baseline-maven-plugin</artifactId>
+                <version>${bnd.version}</version>
+                <executions>
+                    <execution>
+                        <id>bnd-baseline</id>
+                        <goals>
+                            <goal>baseline</goal>
+                        </goals>
+                        <configuration>
+                            <diffignores>
+                                <diffignore>Bundle-Version</diffignore>
+                            </diffignores>
+                        </configuration>
+                    </execution>
+                </executions>
+        </plugin>
         </plugins>
     </build>
 
