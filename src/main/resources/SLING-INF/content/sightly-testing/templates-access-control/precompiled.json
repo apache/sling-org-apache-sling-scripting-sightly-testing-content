@@ -1,0 +1,4 @@
+{
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "org/apache/sling/scripting/sightly/testing/precompiled/templates-access-control"
+}
