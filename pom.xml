@@ -179,7 +179,7 @@
         <dependency>
             <groupId>io.sightly</groupId>
             <artifactId>io.sightly.tck</artifactId>
-            <version>1.4.2</version>
+            <version>1.4.3</version>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
