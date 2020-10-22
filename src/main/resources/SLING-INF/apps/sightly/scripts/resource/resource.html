@@ -22,15 +22,15 @@
     <title>HTL data-sly-resource - Sling implementation</title>
 </head>
 <body>
-<div id="selectors" data-sly-resource="${'/sightly/includedresource' @ selectors=['a', 'b']}"></div>
-<div id="selectors-remove-c" data-sly-resource="${'/sightly/includedresource.a.b.c.html' @ selectors=['a', 'b']}"></div>
-<div id="removeselectors-remove-b" data-sly-resource="${'/sightly/includedresource.a.b.c.html' @ removeSelectors=['b']}"></div>
-<div id="addselectors" data-sly-resource="${'/sightly/includedresource' @ addSelectors=['a', 'b', 'c']}"></div>
+<div id="selectors" data-sly-resource="${'/content/sightly/includedresource' @ selectors=['a', 'b']}"></div>
+<div id="selectors-remove-c" data-sly-resource="${'/content/sightly/includedresource.a.b.c.html' @ selectors=['a', 'b']}"></div>
+<div id="removeselectors-remove-b" data-sly-resource="${'/content/sightly/includedresource.a.b.c.html' @ removeSelectors=['b']}"></div>
+<div id="addselectors" data-sly-resource="${'/content/sightly/includedresource' @ addSelectors=['a', 'b', 'c']}"></div>
 <div id="dot-include" data-sly-resource="${ '.' @ selectors='dot'}"></div>
-<div id="extension-selectors" data-sly-resource="${'/sightly/text.a.b.txt'}"></div>
-<div id="extension-replaceselectors" data-sly-resource="${'/sightly/text.a.b.txt' @ selectors=['c']}"></div>
-<sly data-sly-resource="${'/sightly/resource.with.dots.in.path' @ resourceType='sightly/scripts/renderer'}"/>
-<sly data-sly-resource="${'/sightly/nonexistingresource' @ resourceType='sightly/scripts/renderer'}"/>
+<div id="extension-selectors" data-sly-resource="${'/content/sightly/text.a.b.txt'}"></div>
+<div id="extension-replaceselectors" data-sly-resource="${'/content/sightly/text.a.b.txt' @ selectors=['c']}"></div>
+<sly data-sly-resource="${'/content/sightly/resource.with.dots.in.path' @ resourceType='sightly/scripts/renderer'}"/>
+<sly data-sly-resource="${'/content/sightly/nonexistingresource' @ resourceType='sightly/scripts/renderer'}"/>
 <sly data-sly-resource="${@ resourceType='sightly/scripts/renderer'}"/>
 <div id="wrapper-no-recursion" data-sly-resource="${'.'}"></div>
 </body>
