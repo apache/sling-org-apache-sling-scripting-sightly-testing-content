@@ -1,0 +1,10 @@
+{
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [ "mix:language" ],
+    "jcr:language": "cs",
+    "results-plural": {
+        "jcr:primaryType": "sling:MessageEntry",
+        "sling:key": "{0,plural,one{# result} other{# results}}",
+        "sling:message": "{0,plural,one{# výsledek} few{# výsledky} other{# výsledků}}"
+    }
+}

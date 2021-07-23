@@ -29,4 +29,19 @@ public class FormatPojo {
         return date;
     }
 
+    public int getZero() {
+        return 0;
+    }
+
+    public int getOne() {
+        return 1;
+    }
+
+    public int getFew() {
+        return 3;
+    }
+
+    public int getMany() {
+        return 15;
+    }
 }
