@@ -42,6 +42,7 @@
         <div id="test-enum-value">${testEnum.ENUM_CONSTANT}</div>
         <div id="test-enum-staticfield">${testEnum.STATIC_FIELD1}</div>
         <div id="test-enum-staticmethod">${testEnum.something}</div>
+        <div id="test-enum-value2-${v.ordinal}" data-sly-repeat.v="${testEnum.values}">${v}</div>
         <div id="rradapt">${rradapt.title}</div>
     </body>
 </html>

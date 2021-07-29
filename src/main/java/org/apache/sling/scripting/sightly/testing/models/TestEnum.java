@@ -23,7 +23,8 @@ package org.apache.sling.scripting.sightly.testing.models;
  */
 public enum TestEnum {
 
-    ENUM_CONSTANT;
+    ENUM_CONSTANT,
+    ENUM_CONSTANT2;
 
     public static final String STATIC_FIELD1 = "static field1";
     public static String something() {
