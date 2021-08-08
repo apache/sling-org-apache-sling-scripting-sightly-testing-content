@@ -28,7 +28,8 @@
           data-sly-use.rradapt="${'org.apache.sling.scripting.sightly.testing.adaptable.ResourceResolverAdapterUseObject' @ adaptable = request.resourceResolver}"
           data-sly-use.osgi="org.apache.sling.scripting.sightly.testing.use.TestService"
           data-sly-use.repoNoPkg="RepoPojoNoPkg"
-          data-sly-use.testEnum="TestEnumHolder">
+          data-sly-use.testEnumHolder="TestEnumHolder"
+          data-sly-use.testEnum="org.apache.sling.scripting.sightly.testing.models.TestEnum">
         <div id="reqmodel">${reqmodel.title}</div>
         <div id="reqmodel-reqarg">${reqmodel.requestArgument}</div>
         <div id="reqmodel-bindings">${reqmodel.getJCRType}</div>
@@ -37,7 +38,11 @@
         <div id="resadapt">${resadapt.title}</div>
         <div id="osgi">${osgi.sayHello}</div>
         <div id="repopojo-nopkg">${repoNoPkg.FIELD}</div>
-        <div id="test-enum">${testEnum.constantValue}</div>
+        <div id="test-enum">${testEnumHolder.constantValue}</div>
+        <div id="test-enum-value">${testEnum.ENUM_CONSTANT}</div>
+        <div id="test-enum-staticfield">${testEnum.STATIC_FIELD1}</div>
+        <div id="test-enum-staticmethod">${testEnum.something}</div>
+        <div id="test-enum-value2-${v.ordinal}" data-sly-repeat.v="${testEnum.values}">${v}</div>
         <div id="rradapt">${rradapt.title}</div>
     </body>
 </html>
