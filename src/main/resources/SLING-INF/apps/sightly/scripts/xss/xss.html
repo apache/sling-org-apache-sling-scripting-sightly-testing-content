@@ -14,8 +14,27 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
-<script type="application/json" id="json-string-1">
-{
-  "field":"${'"	 test'@ context='jsonString'}"
+<html data-sly-use.faq="org.apache.sling.scripting.sightly.testing.models.FaqModel">
+<head>
+<!-- follows schema from https://developers.google.com/search/docs/appearance/structured-data/faqpage -->
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"${faq.question @ context='jsonString'}"
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"${faq.answer @ context='jsonString'}"
+      }
+    }
+  ]
 }
 </script>
+</head>
+<body>
+  <h1>Question: ${faq.question}</h1>
+  <p>${faq.answer}</p>
+</body>
+</html>
