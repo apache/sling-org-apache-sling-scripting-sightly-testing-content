@@ -14,8 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-
-@Version("1.5.0")
 package org.apache.sling.scripting.sightly.testing.models;
 
-import org.osgi.annotation.versioning.Version;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Model;
+
+@Model(adaptables = Resource.class)
+public class FaqModel {
+
+   
+    public String getQuestion() {
+        return "Some question with special character \"\':\t"; // some invalid characters in JSON
+    }
+
+    public String getAnswer() {
+        return "42";
+    }
+
+}
