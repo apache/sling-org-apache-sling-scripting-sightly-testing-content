@@ -79,6 +79,10 @@
     "inherit": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "sightly/scripts/inherit"
+    },
+    "xss": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType" : "/apps/sightly/scripts/xss"
     }
 
 }
