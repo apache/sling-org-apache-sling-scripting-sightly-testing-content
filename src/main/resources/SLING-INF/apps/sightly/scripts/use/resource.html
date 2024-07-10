@@ -29,26 +29,15 @@
     <div class="data">${somefolder.data}</div>
 </div>
 <div id="sometemplate" data-sly-use.sometemplate="use-sometemplate.html">
-    <div class="name">${sometemplate.name}</div>
-    <div class="path">${sometemplate.path}</div>
-    <div class="resourceType">${sometemplate.resourceType}</div>
     <div class="data"><sly data-sly-call="${sometemplate.data}" /></div>
 </div>
 <div id="somejava" data-sly-use.somejava="UseSomeJava">
-    <div class="name">${somejava.name}</div>
-    <div class="path">${somejava.path}</div>
-    <div class="resourceType">${somejava.resourceType}</div>
     <div class="data">${somejava.data}</div>
 </div>
 <div id="somejs" data-sly-use.somejs="use-somejs.js">
-    <div class="name">${somejs.name}</div>
-    <div class="path">${somejs.path}</div>
-    <div class="resourceType">${somejs.resourceType}</div>
     <div class="data">${somejs.data}</div>
 </div>
 <div id="someecma" data-sly-use.someecma="use-someecma.ecma">
-    <div class="name">${someecma.name}</div>
-    <div class="path">${someecma.path}</div>
-    <div class="resourceType">${someecma.resourceType}</div>
     <div class="data">${someecma}</div>
 </div>
+<div class="resource-wrapper" data-sly-include="partials/partial.html"></div>
