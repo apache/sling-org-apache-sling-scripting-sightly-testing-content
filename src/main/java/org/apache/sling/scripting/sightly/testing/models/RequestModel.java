@@ -1,4 +1,4 @@
-/*******************************************************************************
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -15,7 +15,7 @@
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- ******************************************************************************/
+ */
 package org.apache.sling.scripting.sightly.testing.models;
 
 import javax.inject.Inject;
@@ -31,15 +31,19 @@ import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 @Model(adaptables = SlingHttpServletRequest.class)
 public class RequestModel {
 
-    @Inject @Via("resource") @Named("jcr:title")
+    @Inject
+    @Via("resource")
+    @Named("jcr:title")
     private String title;
 
-    @Inject @Named("argument")
+    @Inject
+    @Named("argument")
     // get it from request attributes
     private String requestArgument;
 
     @ScriptVariable
     private ValueMap properties;
+
     private String jcrType;
 
     public String getTitle() {
@@ -53,5 +57,4 @@ public class RequestModel {
     public String getJCRType() {
         return PropertiesUtil.toString(properties.get("jcr:primaryType"), "FAILED");
     }
-
 }
