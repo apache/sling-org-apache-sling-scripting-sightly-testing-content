@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ~ Licensed to the Apache Software Foundation (ASF) under one
   ~ or more contributor license agreements.  See the NOTICE file
@@ -41,140 +41,21 @@
 
     <name>Apache Sling Scripting HTL Testing Content</name>
 
-    <description>
-        This bundle contains:
+    <description>This bundle contains:
             - Content adapted from the Adobe HTL TCK meant to test the org.apache.sling.scripting.HTL implementations.
-            - Content meant to test performance of the org.apache.sling.scripting.HTL implementation.
-    </description>
+            - Content meant to test performance of the org.apache.sling.scripting.HTL implementation.</description>
 
     <scm>
         <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-scripting-sightly-testing-content.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-scripting-sightly-testing-content.git</developerConnection>
+        <tag>HEAD</tag>
         <url>https://github.com/apache/sling-org-apache-sling-scripting-sightly-testing-content.git</url>
-      <tag>HEAD</tag>
-  </scm>
+    </scm>
 
     <properties>
         <project.build.outputTimestamp>2024-07-17T13:22:23Z</project.build.outputTimestamp>
         <sling.java.version>8</sling.java.version>
     </properties>
-
-    <!-- ======================================================================= -->
-    <!-- B U I L D                                                               -->
-    <!-- ======================================================================= -->
-    <build>
-        <resources>
-            <resource>
-                <directory>${basedir}/src/main/resources</directory>
-            </resource>
-            <resource>
-                <directory>${project.build.outputDirectory}/SLING-INF/sightlytck</directory>
-                <targetPath>SLING-INF/sightlytck</targetPath>
-            </resource>
-        </resources>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <!-- Extend RAT configuration from parent pom -->
-                    <groupId>org.apache.rat</groupId>
-                    <artifactId>apache-rat-plugin</artifactId>
-                    <configuration>
-                        <excludes combine.children="append">
-                            <exclude>src/main/resources/SLING-INF/**/*.json</exclude>
-                            <exclude>src/main/resources/SLING-INF/**/*.ecma</exclude>
-                            <!-- Ignore files generated bei IDE plugins e.g. maven-eclipse-plugin -->
-                            <exclude>maven-eclipse.xml</exclude>
-                            <exclude>.*</exclude>
-                            <exclude>.*/**</exclude>
-                        </excludes>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unpack</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>io.sightly</groupId>
-                                    <artifactId>io.sightly.tck</artifactId>
-                                    <type>jar</type>
-                                    <outputDirectory>${project.build.directory}/sightlytck/</outputDirectory>
-                                    <includes>**/*.html,**/*.js,**/*.java</includes>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.outputDirectory}/SLING-INF/sightlytck/scripts</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${project.build.directory}/sightlytck/testfiles/scripts/</directory>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jslint-maven-plugin</artifactId>
-                <version>1.0.1</version>
-                <configuration>
-                    <sourceJsFolder>${basedir}/src/main/resources/SLING-INF</sourceJsFolder>
-                    <includes>
-                        <include>**/*.json</include>
-                    </includes>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>jslint</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>biz.aQute.bnd</groupId>
-                <artifactId>bnd-baseline-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>bnd-baseline</id>
-                        <goals>
-                            <goal>baseline</goal>
-                        </goals>
-                        <configuration>
-                            <diffignores>
-                                <diffignore>Bundle-Version</diffignore>
-                            </diffignores>
-                        </configuration>
-                    </execution>
-                </executions>
-        </plugin>
-        </plugins>
-    </build>
 
     <dependencies>
         <!-- Test bundle dependencies -->
@@ -229,5 +110,122 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <!-- ======================================================================= -->
+    <!-- B U I L D                                                               -->
+    <!-- ======================================================================= -->
+    <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+            </resource>
+            <resource>
+                <targetPath>SLING-INF/sightlytck</targetPath>
+                <directory>${project.build.outputDirectory}/SLING-INF/sightlytck</directory>
+            </resource>
+        </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!-- Extend RAT configuration from parent pom -->
+                    <groupId>org.apache.rat</groupId>
+                    <artifactId>apache-rat-plugin</artifactId>
+                    <configuration>
+                        <excludes combine.children="append">
+                            <exclude>src/main/resources/SLING-INF/**/*.json</exclude>
+                            <exclude>src/main/resources/SLING-INF/**/*.ecma</exclude>
+                            <!-- Ignore files generated bei IDE plugins e.g. maven-eclipse-plugin -->
+                            <exclude>maven-eclipse.xml</exclude>
+                            <exclude>.*</exclude>
+                            <exclude>.*/**</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>io.sightly</groupId>
+                                    <artifactId>io.sightly.tck</artifactId>
+                                    <type>jar</type>
+                                    <outputDirectory>${project.build.directory}/sightlytck/</outputDirectory>
+                                    <includes>**/*.html,**/*.js,**/*.java</includes>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.outputDirectory}/SLING-INF/sightlytck/scripts</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.build.directory}/sightlytck/testfiles/scripts/</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jslint-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <configuration>
+                    <sourceJsFolder>${basedir}/src/main/resources/SLING-INF</sourceJsFolder>
+                    <includes>
+                        <include>**/*.json</include>
+                    </includes>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jslint</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bnd-baseline-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>bnd-baseline</id>
+                        <goals>
+                            <goal>baseline</goal>
+                        </goals>
+                        <configuration>
+                            <diffignores>
+                                <diffignore>Bundle-Version</diffignore>
+                            </diffignores>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

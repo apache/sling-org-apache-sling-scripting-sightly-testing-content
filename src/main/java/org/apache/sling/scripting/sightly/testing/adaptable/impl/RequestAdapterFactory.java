@@ -1,4 +1,4 @@
-/*******************************************************************************
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -15,7 +15,7 @@
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- ******************************************************************************/
+ */
 package org.apache.sling.scripting.sightly.testing.adaptable.impl;
 
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -27,10 +27,10 @@ import org.osgi.service.component.annotations.Component;
 
 @Component(
         property = {
-                AdapterFactory.ADAPTABLE_CLASSES + "=org.apache.sling.api.SlingHttpServletRequest",
-                AdapterFactory.ADAPTER_CLASSES + "=org.apache.sling.scripting.sightly.testing.adaptable.RequestAdapterUseObject"
-        }
-)
+            AdapterFactory.ADAPTABLE_CLASSES + "=org.apache.sling.api.SlingHttpServletRequest",
+            AdapterFactory.ADAPTER_CLASSES
+                    + "=org.apache.sling.scripting.sightly.testing.adaptable.RequestAdapterUseObject"
+        })
 public class RequestAdapterFactory implements AdapterFactory {
 
     @Override

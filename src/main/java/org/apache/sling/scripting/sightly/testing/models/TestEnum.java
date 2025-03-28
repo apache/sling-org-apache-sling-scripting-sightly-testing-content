@@ -1,4 +1,4 @@
-/*******************************************************************************
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -15,20 +15,19 @@
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- ******************************************************************************/
+ */
 package org.apache.sling.scripting.sightly.testing.models;
 
 /**
  * For testing SLING-10677
  */
 public enum TestEnum {
-
     ENUM_CONSTANT,
     ENUM_CONSTANT2;
 
     public static final String STATIC_FIELD1 = "static field1";
+
     public static String something() {
         return "something";
     }
-
 }
